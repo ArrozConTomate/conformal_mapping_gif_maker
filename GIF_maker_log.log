@@ -1,0 +1,50 @@
+2021-03-03 13:24:57,849: INFO: __main__: --------------- New GIF --------------- 
+2021-03-03 13:24:57,851: INFO: __main__: Plot parameters: 
+2021-03-03 13:24:57,851: INFO: __main__: num_initial_lines: 100 
+2021-03-03 13:24:57,851: INFO: __main__: step_height_initial_lines: 0.1 
+2021-03-03 13:24:57,851: INFO: __main__: x_inf_lim_initial_lines: -50 
+2021-03-03 13:24:57,851: INFO: __main__: x_sup_lim_initial_lines: 50 
+2021-03-03 13:24:57,851: INFO: __main__: step_grid_inside_each_line: 0.01 
+2021-03-03 13:24:57,851: INFO: __main__: GIF parameters: 
+2021-03-03 13:24:57,851: INFO: __main__: fps: 15 
+2021-03-03 13:24:57,851: INFO: __main__: gif_name: prueba.gif 
+2021-03-03 13:24:57,852: INFO: __main__: Execution times: 
+2021-03-03 13:24:59,298: INFO: __main__: Time to compute the final values: 1.4461324214935303 
+2021-03-03 13:25:37,797: INFO: __main__: --------------- New GIF --------------- 
+2021-03-03 13:25:37,797: INFO: __main__: Plot parameters: 
+2021-03-03 13:25:37,797: INFO: __main__: num_initial_lines: 100 
+2021-03-03 13:25:37,797: INFO: __main__: step_height_initial_lines: 0.1 
+2021-03-03 13:25:37,797: INFO: __main__: x_inf_lim_initial_lines: -50 
+2021-03-03 13:25:37,798: INFO: __main__: x_sup_lim_initial_lines: 50 
+2021-03-03 13:25:37,798: INFO: __main__: step_grid_inside_each_line: 0.01 
+2021-03-03 13:25:37,798: INFO: __main__: GIF parameters: 
+2021-03-03 13:25:37,798: INFO: __main__: fps: 15 
+2021-03-03 13:25:37,798: INFO: __main__: gif_name: prueba.gif 
+2021-03-03 13:25:37,798: INFO: __main__: Execution times: 
+2021-03-03 13:25:39,234: INFO: __main__: Time to compute the final values: 1.4361796379089355 
+2021-03-03 13:26:18,268: INFO: __main__: --------------- New GIF --------------- 
+2021-03-03 13:26:18,268: INFO: __main__: Plot parameters: 
+2021-03-03 13:26:18,268: INFO: __main__: num_initial_lines: 100 
+2021-03-03 13:26:18,268: INFO: __main__: step_height_initial_lines: 0.1 
+2021-03-03 13:26:18,268: INFO: __main__: x_inf_lim_initial_lines: -50 
+2021-03-03 13:26:18,268: INFO: __main__: x_sup_lim_initial_lines: 50 
+2021-03-03 13:26:18,268: INFO: __main__: step_grid_inside_each_line: 0.01 
+2021-03-03 13:26:18,268: INFO: __main__: GIF parameters: 
+2021-03-03 13:26:18,268: INFO: __main__: fps: 15 
+2021-03-03 13:26:18,268: INFO: __main__: gif_name: prueba.gif 
+2021-03-03 13:26:18,269: INFO: __main__: Execution times: 
+2021-03-03 13:26:19,728: INFO: __main__: Time to compute the final values: 1.4590985774993896 
+2021-03-03 13:32:04,722: INFO: __main__: Time to generate the .gif file: 344.99210953712463 
+2021-03-03 13:35:58,938: INFO: __main__: --------------- New GIF --------------- 
+2021-03-03 13:35:58,940: INFO: __main__: Plot parameters: 
+2021-03-03 13:35:58,940: INFO: __main__: num_initial_lines: 100 
+2021-03-03 13:35:58,940: INFO: __main__: step_height_initial_lines: 0.1 
+2021-03-03 13:35:58,940: INFO: __main__: x_inf_lim_initial_lines: -50 
+2021-03-03 13:35:58,940: INFO: __main__: x_sup_lim_initial_lines: 50 
+2021-03-03 13:35:58,940: INFO: __main__: step_grid_inside_each_line: 0.01 
+2021-03-03 13:35:58,940: INFO: __main__: GIF parameters: 
+2021-03-03 13:35:58,941: INFO: __main__: fps: 60 
+2021-03-03 13:35:58,941: INFO: __main__: gif_name: prueba.gif 
+2021-03-03 13:35:58,941: INFO: __main__: Execution times: 
+2021-03-03 13:36:00,451: INFO: __main__: Time to compute the final values: 1.5099897384643555 
+2021-03-03 13:43:04,441: INFO: __main__: Time to generate the .gif file: 423.9898190498352 
