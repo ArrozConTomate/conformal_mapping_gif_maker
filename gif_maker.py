@@ -1,4 +1,4 @@
-import renderizer
+from func_tools import renderizer as renderizer
 import logging
 import numpy as np
 import time
@@ -35,8 +35,8 @@ x_sup_lim_initial_lines = 50 # x superior limiti of the initial lines
 step_grid_inside_each_line = 0.01 # distance between each initial line´s points
 
 # Parameters to create the actual .GIF file
-fps = 60 # frames per second
-gif_name = 'prueba.gif' # name of the .GIF file
+fps = 15 # frames per second
+gif_name = 'conf_mapping_15fps.gif' # name of the .GIF file
 
 logger.info('Plot parameters:')
 logger.info('num_initial_lines: {}'.format(num_initial_lines))
@@ -85,7 +85,7 @@ alphas = list(np.linspace(1, 1, number_of_initial_lines)) # shadings
 
 tic = time.time()
 kwargs_write = {'fps':1.0, 'quantizer':'nq'}
-imageio.mimsave('./' + gif_name, [renderizer.plot_for_offset(initial_real,
+imageio.mimsave('./gifs/' + gif_name, [renderizer.plot_for_offset(initial_real,
                                                   initial_complex,
                                                   final_real,
                                                   final_complex,
