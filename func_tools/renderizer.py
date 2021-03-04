@@ -38,51 +38,108 @@ def final_real_and_complex_coords(num_initial_lines,
                                   x_inf_lim_initial_lines,
                                   x_sup_lim_initial_lines,
                                   step_grid_inside_each_line,
-                                  conf_mapping):
-    heights = []
+                                  conf_mapping,
+                                  upper_half_complex_plane=1):
     
-    i = 0
-    while len(heights) <= num_initial_lines:
-        x = i*step_height_initial_lines
-        heights.append(x)
-        i += 1
+    if upper_half_complex_plane:
+        logger.info('Initial domain: upper-half complex plane')
+        heights = []
         
-    number_of_initial_lines = len(heights)
-    X = linspace(x_inf_lim_initial_lines, x_sup_lim_initial_lines, step_grid_inside_each_line)
-    steps_initial = len(X)
-    
-    heigth_complex_lines = heights
-    
-    for i in range(number_of_initial_lines+1):
-        if i != 1:
-            heigth_complex_lines.append(i)
+        i = 0
+        while len(heights) <= num_initial_lines:
+            x = i*step_height_initial_lines
+            heights.append(x)
+            i += 1
             
+        number_of_initial_lines = len(heights)
+        X = linspace(x_inf_lim_initial_lines, x_sup_lim_initial_lines, step_grid_inside_each_line)
+        steps_initial = len(X)
+        
+        heigth_complex_lines = heights
+        
+        for i in range(number_of_initial_lines+1):
+            if i != 1:
+                heigth_complex_lines.append(i)
+                
+                
+        t = np.linspace(0, 1, number_of_initial_lines)
+        
+        
+        initial_real = np.zeros([number_of_initial_lines, steps_initial])
+        initial_complex = np.zeros([number_of_initial_lines, steps_initial])
+        
+        final_real = np.zeros([number_of_initial_lines, steps_initial])
+        final_complex = np.zeros([number_of_initial_lines, steps_initial])
+        
+        #X = linspace(-6, 6, 0.01)
+        for i in range(number_of_initial_lines):
+            for ii in range(steps_initial):
+                x = X[ii]
+                
+                initial_real[i, ii] = x
+                initial_complex[i, ii] = heigth_complex_lines[i]
+        
+        for i in range(number_of_initial_lines):
+            for ii in range(steps_initial):
+                z = complex(initial_real[i, ii], initial_complex[i, ii])
+                
+                f_z = conf_mapping(z)
+                
+                final_real[i, ii] = np.real(f_z)
+                final_complex[i, ii] = np.imag(f_z)
+                
+    else:
+        logger.info('Initial domain: upper-half complex plane')
+        heights = []
+        
+        i = 0
+        while len(heights) <= num_initial_lines/2:
+            x = i*step_height_initial_lines
+            heights.append(x)
+            i += 1
             
-    t = np.linspace(0, 1, number_of_initial_lines)
-    
-    
-    initial_real = np.zeros([number_of_initial_lines, steps_initial])
-    initial_complex = np.zeros([number_of_initial_lines, steps_initial])
-    
-    final_real = np.zeros([number_of_initial_lines, steps_initial])
-    final_complex = np.zeros([number_of_initial_lines, steps_initial])
-    
-    #X = linspace(-6, 6, 0.01)
-    for i in range(number_of_initial_lines):
-        for ii in range(steps_initial):
-            x = X[ii]
+        i = 0
+        while len(heights) <= num_initial_lines:
+            x = i*step_height_initial_lines
+            heights.append(x)
+            i -= 1
             
-            initial_real[i, ii] = x
-            initial_complex[i, ii] = heigth_complex_lines[i]
-    
-    for i in range(number_of_initial_lines):
-        for ii in range(steps_initial):
-            z = complex(initial_real[i, ii], initial_complex[i, ii])
-            
-            f_z = conf_mapping(z)
-            
-            final_real[i, ii] = np.real(f_z)
-            final_complex[i, ii] = np.imag(f_z)
+        number_of_initial_lines = len(heights)
+        X = linspace(x_inf_lim_initial_lines, x_sup_lim_initial_lines, step_grid_inside_each_line)
+        steps_initial = len(X)
+        
+        heigth_complex_lines = heights
+        
+        for i in range(number_of_initial_lines+1):
+            if i != 1:
+                heigth_complex_lines.append(i)
+                
+                
+        t = np.linspace(0, 1, number_of_initial_lines)
+        
+        
+        initial_real = np.zeros([number_of_initial_lines, steps_initial])
+        initial_complex = np.zeros([number_of_initial_lines, steps_initial])
+        
+        final_real = np.zeros([number_of_initial_lines, steps_initial])
+        final_complex = np.zeros([number_of_initial_lines, steps_initial])
+        
+        #X = linspace(-6, 6, 0.01)
+        for i in range(number_of_initial_lines):
+            for ii in range(steps_initial):
+                x = X[ii]
+                
+                initial_real[i, ii] = x
+                initial_complex[i, ii] = heigth_complex_lines[i]
+        
+        for i in range(number_of_initial_lines):
+            for ii in range(steps_initial):
+                z = complex(initial_real[i, ii], initial_complex[i, ii])
+                
+                f_z = conf_mapping(z)
+                
+                final_real[i, ii] = np.real(f_z)
+                final_complex[i, ii] = np.imag(f_z)
             
     return(initial_real, initial_complex, final_real, final_complex, number_of_initial_lines, steps_initial)
 

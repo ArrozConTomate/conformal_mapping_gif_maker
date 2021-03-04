@@ -1,0 +1,13 @@
+2021-03-03 17:11:34,925: INFO: __main__: --------------- New GIF --------------- 
+2021-03-03 17:11:34,925: INFO: __main__: Plot parameters: 
+2021-03-03 17:11:34,926: INFO: __main__: num_initial_lines: 10 
+2021-03-03 17:11:34,926: INFO: __main__: step_height_initial_lines: 1 
+2021-03-03 17:11:34,926: INFO: __main__: x_inf_lim_initial_lines: -5 
+2021-03-03 17:11:34,926: INFO: __main__: x_sup_lim_initial_lines: 5 
+2021-03-03 17:11:34,926: INFO: __main__: step_grid_inside_each_line: 0.1 
+2021-03-03 17:11:34,926: INFO: __main__: GIF parameters: 
+2021-03-03 17:11:34,926: INFO: __main__: fps: 15 
+2021-03-03 17:11:34,926: INFO: __main__: gif_name: conf_mapping_15fps.gif 
+2021-03-03 17:11:34,926: INFO: __main__: Execution times: 
+2021-03-03 17:11:34,928: INFO: __main__: Time to compute the final values: 0.0019943714141845703 
+2021-03-03 17:11:46,031: INFO: __main__: Time to generate the .gif file: 11.10282850265503 

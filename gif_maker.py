@@ -29,14 +29,20 @@ def conf_mapping(z):
     
 # Parameters to compute the real and complex parts:
 num_initial_lines = 100 # Number of lines to be plotted at t=0 (initial)
-step_height_initial_lines = 0.1 # Distance between each lines (initial)
+step_height_initial_lines = 0.101 # Distance between each lines (initial)
 x_inf_lim_initial_lines = -50 # x inferior limit of the initial lines
 x_sup_lim_initial_lines = 50 # x superior limiti of the initial lines
 step_grid_inside_each_line = 0.01 # distance between each initial line´s points
 
 # Parameters to create the actual .GIF file
 fps = 15 # frames per second
-gif_name = 'conf_mapping_15fps.gif' # name of the .GIF file
+gif_name = 'conf_mapping_whole_pcomplex_plane_15fps_.gif' # name of the .GIF file
+
+# Axis limits for the plot
+x_inf_lim_plot=-1.1
+x_sup_lim_plot=3.1
+y_inf_lim_plot=-2.1
+y_sup_lim_plot=2.1
 
 logger.info('Plot parameters:')
 logger.info('num_initial_lines: {}'.format(num_initial_lines))
@@ -71,7 +77,8 @@ renderizer.final_real_and_complex_coords(num_initial_lines,
                                          x_inf_lim_initial_lines,
                                          x_sup_lim_initial_lines,
                                          step_grid_inside_each_line,
-                                         conf_mapping)
+                                         conf_mapping,
+                                         upper_half_complex_plane=0)
 
 toc = time.time()
 logger.info('Time to compute the final values: {}'.format(toc-tic))
@@ -83,6 +90,7 @@ logger.info('Time to compute the final values: {}'.format(toc-tic))
 #alphas = list(np.linspace(1, 0, number_of_initial_lines)) # shadings
 alphas = list(np.linspace(1, 1, number_of_initial_lines)) # shadings
 
+
 tic = time.time()
 kwargs_write = {'fps':1.0, 'quantizer':'nq'}
 imageio.mimsave('./gifs/' + gif_name, [renderizer.plot_for_offset(initial_real,
@@ -93,7 +101,11 @@ imageio.mimsave('./gifs/' + gif_name, [renderizer.plot_for_offset(initial_real,
                                                   steps_initial,
                                                   step_height_initial_lines,
                                                   t,
-                                                  alphas) for t in time_values], fps=fps)
+                                                  alphas,
+                                                  x_inf_lim_plot=x_inf_lim_plot,
+                                                  x_sup_lim_plot=x_sup_lim_plot,
+                                                  y_inf_lim_plot=y_inf_lim_plot,
+                                                  y_sup_lim_plot=y_sup_lim_plot) for t in time_values], fps=fps)
 
 toc = time.time()
 logger.info('Time to generate the .gif file: {}'.format(toc-tic))
