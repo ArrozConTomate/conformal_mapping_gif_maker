@@ -194,6 +194,6 @@ def plot_for_offset(initial_real, initial_complex, final_real, final_complex,
     # Used to return the plot as an image rray
     fig.canvas.draw()       # draw the canvas, cache the renderer
     image = np.frombuffer(fig.canvas.tostring_rgb(), dtype='uint8')
-    image  = image.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    image = image.reshape(fig.canvas.get_width_height()[::-1] + (3,))
     
     return image

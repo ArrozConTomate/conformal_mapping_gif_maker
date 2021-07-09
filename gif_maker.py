@@ -35,14 +35,14 @@ x_sup_lim_initial_lines = 50 # x superior limiti of the initial lines
 step_grid_inside_each_line = 0.01 # distance between each initial line´s points
 
 # Parameters to create the actual .GIF file
-fps = 15 # frames per second
-gif_name = 'conf_mapping_whole_pcomplex_plane_15fps_.gif' # name of the .GIF file
+fps = 60 # frames per second
+gif_name = 'Cayley_transform.gif' # name of the .GIF file
 
 # Axis limits for the plot
 x_inf_lim_plot=-1.1
-x_sup_lim_plot=3.1
-y_inf_lim_plot=-2.1
-y_sup_lim_plot=2.1
+x_sup_lim_plot=1.1
+y_inf_lim_plot=-1.1
+y_sup_lim_plot=1.1
 
 logger.info('Plot parameters:')
 logger.info('num_initial_lines: {}'.format(num_initial_lines))
@@ -78,7 +78,7 @@ renderizer.final_real_and_complex_coords(num_initial_lines,
                                          x_sup_lim_initial_lines,
                                          step_grid_inside_each_line,
                                          conf_mapping,
-                                         upper_half_complex_plane=0)
+                                         upper_half_complex_plane=1)
 
 toc = time.time()
 logger.info('Time to compute the final values: {}'.format(toc-tic))
